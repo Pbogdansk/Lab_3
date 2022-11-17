@@ -31,23 +31,22 @@ public class MainUI {
         return rootPanel;
 
     }
-
     ArrayList<MyClass> groups = new ArrayList<MyClass>();
     public MainUI(){
         Student student = new Student("Maciej", "Nowak","Nieobecny",2001, 0.1);
-        Student student2 = new Student("Pidor", "Nowak","Nieobecny",2001, 0.1);
-        Student student3 = new Student("Wołga", "Nok","Nieobecny",2001, 0.1);
+        Student student2 = new Student("Michał", "Fila","Nieobecny",2001, 0.1);
+        Student student3 = new Student("Wołga", "Moskwa","Nieobecny",2001, 0.1);
         student.print();
 
-        MyClass klasa1 = new MyClass("Pedały", 4);
-        MyClass klasa2 = new MyClass("Cipki", 4);
-        MyClass klasa3 = new MyClass("Gżybioże", 4);
+        MyClass klasa1 = new MyClass("Klasa A", 4);
+        MyClass klasa2 = new MyClass("Klasa B", 4);
+        MyClass klasa3 = new MyClass("Klasa C", 4);
         ClassContainer classContainer = new ClassContainer();
         classContainer.addClass(klasa1);
         classContainer.addClass(klasa2);
         classContainer.addClass(klasa3);
 //        String[] classNames =new String[]{klasa1.groupName, klasa2.groupName, klasa3.groupName};
-        String[] condition = {"Obecny", "Nieobecny", "Dałniak"};
+        String[] condition = {"Obecny", "Nieobecny", "Spóźnienie"};
         classNamesComboBox.setModel(new DefaultComboBoxModel(classContainer.grupy.keySet().toArray(new String[0])));
         nazwaKlasy.setModel(new DefaultComboBoxModel(classContainer.grupy.keySet().toArray(new String[0])));
 
@@ -62,7 +61,7 @@ public class MainUI {
         JComboBox comboBox = new JComboBox();
         comboBox.addItem("Nieobecny");
         comboBox.addItem("Obecny");
-        comboBox.addItem("Dałniak");
+        comboBox.addItem("Spóźnienie");
         sportColumn.setCellEditor(new DefaultCellEditor(comboBox));
         conditionComboBox.setModel(new DefaultComboBoxModel(condition));
 

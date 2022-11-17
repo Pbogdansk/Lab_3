@@ -98,14 +98,6 @@ public class MyClass {
         return newArray;
     }
 
-    public static void main(String[] args) {
-        Student student = new Student("Piotr", "Nowak","najebany",2001, 0.1);
-        student.print();
-
-        MyClass klasa1 = new MyClass("Pedały", 4);
-        klasa1.addStudent(student);
-        student.print();
-    }
 
 
 }
