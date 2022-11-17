@@ -2,6 +2,7 @@ package Classes;
 
 import ui.Student;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,10 @@ public class MyClass {
     public void addStudent(Student student) {
         for (Student s : studentList) {
             if (s.name.contains(student.name)) {
-                System.out.println("ten student juz istnieje");
+                JOptionPane.showMessageDialog(null,
+                        "ten student juz istnieje",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }
@@ -35,9 +39,30 @@ public class MyClass {
             System.out.println("");
             studentList.add(student);
         }else {
-            System.err.println("Osiągnięto limit stanu osobowego klasy\n");
+            JOptionPane.showMessageDialog(null,
+                    "Osiągnięto limit stanu osobowego klasy",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
         }
     }
+
+    public void removeStudent(String name, String lastname){
+        for (Student s: studentList) {
+            if(s.name == name && s.lastName==lastname){
+                studentList.remove(s);
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "MyClass{" +
+                "groupName='" + groupName + '\'' +
+                ", studentList=" + studentList +
+                ", maxStudent=" + maxStudent +
+                '}';
+    }
+
     public void changeCondition(Student student, String studentCondition) {
         for (Student s : studentList) {
             if (s.name.equals(student.name)) {
